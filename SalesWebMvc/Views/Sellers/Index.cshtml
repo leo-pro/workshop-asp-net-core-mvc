@@ -25,6 +25,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.BaseSalary)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartamentId)
+            </th>
         </tr>
     </thead>
     <tbody> 
@@ -42,6 +45,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BaseSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartamentId)
             </td>
             <td>
                 <a class="btn btn-xs btn-success" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
