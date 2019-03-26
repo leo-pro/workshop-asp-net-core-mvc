@@ -9,29 +9,37 @@
 <hr/>
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create" method="post">
+        <form asp-action="Create">
             <div class="form-group">
                 <label asp-for="Seller.Name">Name</label>
                 <input type="text" asp-for="Seller.Name" class="form-control" />
+                <span asp-validation-for="Seller.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Seller.Email">Email</label>
-                <input type="email" asp-for="Seller.Email" class="form-control"/>
+                <input type="email" asp-for="Seller.Email" class="form-control" />
+                <span asp-validation-for="Seller.Email" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Seller.BirthDate">BirthDate</label>
-                <input type="datetime-local" asp-for="Seller.BirthDate" class="form-control"/>
+                <input type="datetime-local" asp-for="Seller.BirthDate" class="form-control" />
+                <span asp-validation-for="Seller.BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Seller.BaseSalary">Base Salary</label>
-                <input type="text" asp-for="Seller.BaseSalary" class="form-control"/>
+                <input type="text" asp-for="Seller.BaseSalary" class="form-control" />
+                <span asp-validation-for="Seller.BaseSalary" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Seller.DepartamentId" class="control-label"></label>
-                <select class="form-control" asp-for="Seller.DepartamentId" asp-items="@(new SelectList(Model.Departaments,"Id","Name"))"></select>
+                <select class="form-control" asp-for="Seller.DepartamentId" asp-items="@(new SelectList(Model.Departaments, "Id", "Name"))"></select>
+                <span asp-validation-for="Seller.DepartamentId" class="text-danger"></span>
             </div>
             <input type="submit" value="Create" class="btn btn-default" />
         </form>
     </div>
 </div>
 
+@section Scripts{ 
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
