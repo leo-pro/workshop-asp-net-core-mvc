@@ -1,0 +1,39 @@
+﻿@model SalesWebMvc.Models.SalesRecordFormViewModel
+@{
+    ViewData["Title"] = "Create Seller";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">,
+    <div class="col-md-5">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label>Date</label>
+                <input type="date" class="form-control" asp-for="SalesRecord.Date"/>
+            </div>
+            <div class="form-group">
+                <label>Amount</label>
+                <input type="text" class="form-control" asp-for="SalesRecord.Amount"/>
+            </div>
+            <div class="form-group">
+                <label>Status</label>
+                <!-- Can be automatic -->
+                <select class="form-control" asp-for="SalesRecord.Status">
+                    <option value="0">Pending</option>
+                    <option value="1">Billed</option>
+                    <option value="2">Cancelled</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Seller</label>
+                <select class="form-control" asp-for="SalesRecord.Seller" asp-items="@(new SelectList(Model.Sellers,"Id","Name"))"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="name" value="Create" class="btn btn-default"/>
+            </div>
+        </form>
+    </div>
+</div>
+    
+

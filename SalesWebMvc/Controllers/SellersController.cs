@@ -8,7 +8,6 @@ using SalesWebMvc.Services;
 using SalesWebMvc.Services.Exceptions;
 using SalesWebMvc.Models;
 using SalesWebMvc.Models.ViewModels;
-using System.Threading.Tasks;
 
 namespace SalesWebMvc.Controllers
 {
